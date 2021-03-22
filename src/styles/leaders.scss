@@ -2,11 +2,12 @@
   &-root {
     display: flex;
     flex-direction: column;
-    padding: calc(26 * var(--base-ratio)) calc(66 * var(--base-ratio)) 0;
+    padding: calc(28 * var(--base-ratio)) calc(66 * var(--base-ratio)) 0;
     height: 100%;
 
     @media (max-width: 567px) {
-      padding: calc(69 * var(--base-ratio)) calc(24 * var(--base-ratio)) 0;
+      max-height: calc(487 * var(--base-ratio));
+      padding: calc(0 * var(--base-ratio)) calc(24 * var(--base-ratio)) 0;
     }
   }
 
@@ -55,14 +56,14 @@
     }
 
     &[data-rank="3"] > .Leaders-bar,
-    &[data-rank="3"] > .Leaders-bar,
+    &[data-rank="5"] > .Leaders-bar,
     &[data-rank="3"] > .Leaders-user,
     &[data-rank="5"] > .Leaders-user {
       padding-right: calc(16 * var(--base-ratio));
     }
 
     &[data-rank="2"] > .Leaders-bar,
-    &[data-rank="2"] > .Leaders-bar,
+    &[data-rank="4"] > .Leaders-bar,
     &[data-rank="2"] > .Leaders-user,
     &[data-rank="4"] > .Leaders-user {
       padding-left: calc(16 * var(--base-ratio));
@@ -75,7 +76,7 @@
         height: calc(100% - calc(50 * var(--base-ratio)));
       }
     }
-    
+
     &[data-rank="3"] {
       @media (max-width: 567px) {
         height: calc(100% - calc(100 * var(--base-ratio)));

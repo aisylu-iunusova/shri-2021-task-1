@@ -16,7 +16,7 @@
   }
 
   &-header {
-    padding: calc(24 * var(--base-ratio)) calc(24 * var(--base-ratio)) 0;
+    padding: calc(20 * var(--base-ratio)) calc(24 * var(--base-ratio)) 0;
   }
 
   &-main {
@@ -36,5 +36,11 @@
 
   &-activity &-main {
     align-items: center;
+  }
+
+  &-leaders &-main {
+    @media (max-width: 567px) {
+      justify-content: flex-end;
+    }
   }
 }
