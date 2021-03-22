@@ -1,0 +1,7 @@
+.Header-root {
+  text-align: center;
+
+  @media (max-width: 567px) {
+    text-align: left;
+  }
+}

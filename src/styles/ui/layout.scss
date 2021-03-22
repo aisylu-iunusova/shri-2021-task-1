@@ -1,0 +1,40 @@
+.Layout {
+  &-root {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: calc(6 * var(--base-ratio));
+    height: 100vh;
+
+    @media (orientation: landscape) {
+      min-height: 320px;
+    }
+
+    @media (orientation: portrait) {
+      min-height: 568px;
+    }
+  }
+
+  &-header {
+    padding: calc(24 * var(--base-ratio)) calc(24 * var(--base-ratio)) 0;
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &-diagram &-main {
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 567px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &-activity &-main {
+    align-items: center;
+  }
+}

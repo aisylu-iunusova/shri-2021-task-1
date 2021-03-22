@@ -1,0 +1,37 @@
+.Activity {
+  &-root {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding-top: calc(92 * var(--base-ratio));
+    flex-wrap: wrap;
+    max-width: calc(34 * 12 * var(--base-ratio) + (17 * var(--base-ratio)));
+    max-height: calc(26 * 7 * var(--base-ratio));
+    width: 100%;
+  }
+
+  &-gorizontal {
+    flex-direction: row;
+  }
+
+  &-vetival {
+    flex-direction: column;
+  }
+
+  &-houre {
+    position: relative;
+    flex: 0 1 calc(34 * var(--base-ratio));
+
+    &:nth-child(24n - 11) {
+      margin-left: calc(17 * var(--base-ratio));
+    }
+
+    img {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+}

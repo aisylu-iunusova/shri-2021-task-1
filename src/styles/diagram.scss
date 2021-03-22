@@ -1,0 +1,151 @@
+.Diagram {
+  &-root {
+    padding: 0 calc(42 * var(--base-ratio));
+    display: grid;
+    grid-template-columns: calc(240 * var(--base-ratio)) auto;
+    gap: calc(40 * var(--base-ratio));
+    width: 100%;
+
+    @media (max-width: 567px) {
+      grid-template-columns: 1fr;
+      padding: calc(32 * var(--base-ratio)) calc(24 * var(--base-ratio)) 0;
+      gap: 32px;
+    }
+  }
+
+  &-chart {
+    position: relative;
+  }
+
+  &-total {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: calc(60 * var(--base-ratio));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 567px) {
+      padding: calc(84 * var(--base-ratio));
+    }
+  }
+
+  &-totalText {
+    font-weight: bold;
+    font-size: calc(20 * var(--base-ratio));
+    line-height: calc(22 * var(--base-ratio));
+    text-align: center;
+
+    @media (max-width: 567px) {
+      font-size: calc(30 * var(--base-ratio));
+      line-height: calc(32 * var(--base-ratio));
+    }
+  }
+
+  &-totalDiff {
+    margin-top: calc(6 * var(--base-ratio));
+    font-size: calc(16 * var(--base-ratio));
+    line-height: calc(18 * var(--base-ratio));
+    font-weight: bold;
+    text-align: center;
+    color: rgba(191, 191, 191, 1);
+
+    @media (max-width: 567px) {
+      margin-top: calc(8 * var(--base-ratio));
+      font-size: calc(20 * var(--base-ratio));
+      line-height: calc(22 * var(--base-ratio));
+    }
+  }
+
+  &-categories {
+    border-collapse: collapse;
+    border-spacing: 0;
+    align-self: center;
+  }
+
+  &-categoryCircle {
+    display: flex;
+    width: calc(16 * var(--base-ratio));
+    height: calc(16 * var(--base-ratio));
+    border-radius: 50%;
+    margin-right: calc(10 * var(--base-ratio));
+  }
+
+  &-category {
+    &:not(:first-child) > * {
+      padding-top: calc(16 * var(--base-ratio));
+    }
+
+    &:not(:last-child) > * {
+      padding-bottom: calc(16 * var(--base-ratio));
+      border-bottom: calc(2 * var(--base-ratio)) solid rgba(145, 143, 138, 0.3);
+    }
+
+    &:nth-child(1) span {
+      background: radial-gradient(
+        49.84% 49.84% at 49.84% 50.16%,
+        rgba(255, 184, 0, 0.56) 81.25%,
+        rgba(255, 239, 153, 0.32) 100%
+      );
+      box-shadow: inset calc(-1 * var(--base-ratio)) calc(1 * var(--base-ratio))
+          calc(1 * var(--base-ratio)) rgba(255, 255, 255, 0.5),
+        inset 0px 0px calc(20 * var(--base-ratio)) rgba(255, 176, 57, 0.9);
+    }
+
+    &:nth-child(2) span {
+      background: radial-gradient(
+        49.84% 49.84% at 49.84% 50.16%,
+        rgba(255, 184, 0, 0.24) 81.25%,
+        rgba(255, 239, 153, 0.12) 100%
+      );
+      box-shadow: inset calc(-1 * var(--base-ratio)) calc(1 * var(--base-ratio))
+          calc(1 * var(--base-ratio)) rgba(255, 255, 255, 0.5),
+        inset 0px 0px calc(20 * var(--base-ratio)) rgba(255, 176, 57, 0.4);
+    }
+
+    &:nth-child(3) span {
+      background: radial-gradient(
+        49.84% 49.84% at 49.84% 50.16%,
+        rgba(166, 166, 166, 0.1725) 82.81%,
+        rgba(203, 203, 203, 0.05) 92.19%
+      );
+      box-shadow: inset calc(-1 * var(--base-ratio)) calc(1 * var(--base-ratio))
+          calc(1 * var(--base-ratio)) rgba(255, 255, 255, 0.5),
+        inset 0px 0px calc(20 * var(--base-ratio)) rgba(105, 105, 105, 0.2);
+    }
+
+    &:nth-child(4) span {
+      background: radial-gradient(
+        49.84% 49.84% at 49.84% 50.16%,
+        rgba(191, 191, 191, 0.345) 82.81%,
+        rgba(228, 228, 228, 0.1) 92.19%
+      );
+      box-shadow: inset calc(-1 * var(--base-ratio)) calc(1 * var(--base-ratio))
+          calc(1 * var(--base-ratio)) rgba(255, 255, 255, 0.5),
+        inset 0px 0px calc(20 * var(--base-ratio)) rgba(131, 131, 131, 0.6);
+    }
+  }
+
+  &-categoryItem {
+    width: 1px;
+    font-size: calc(16 * var(--base-ratio));
+    line-height: calc(18 * var(--base-ratio));
+    font-weight: 500;
+    padding: 0;
+    color: rgba(145, 143, 138, 1);
+
+    &[class*="Diagram-categoryTitle"] {
+      width: auto;
+      color: rgba(38, 28, 0, 1);
+    }
+  }
+
+  &-categoryDiff,
+  &-categoryValue {
+    padding-left: calc(16 * var(--base-ratio));
+  }
+}

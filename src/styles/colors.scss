@@ -1,0 +1,31 @@
+:root {
+    --color-white-opacity: 1;
+    --color-white: rgba(252, 251, 247, var(--color-white-opacity));
+
+    --color-greyLight-opacity: 1;
+    --color-greyLight: rgba(191, 191, 191, var(--color-greyLight-opacity));
+
+    --color-grey-opacity: 1;
+    --color-grey: rgba(145, 143, 138, var(--color-grey-opacity));
+
+    --color-yellow-opacity: 1;
+    --color-yellow: rgba(244, 176, 0, , var(--color-yellow-opacity));
+
+    --color-black-opacity: 1;
+    --color-black: rgba(38, 28, 0, var(--color-black-opacity));
+
+    --gradient-yellow: linear-gradient(180deg, #fff2d1 0.82%, #ffd66c 100%);
+    --shadow-yellow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.8);
+
+    --gradient-grey: linear-gradient(180deg, rgba(244, 244, 244, 0.9) 0.82%, #e9e9e9 100%, rgba(234, 234, 234, 0) 100%);
+    --shadow-grey: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(207, 207, 207, 0.5);
+
+    --base-ratio: 100vw / 668;
+    --base-radius: calc(6 * var(--base-ratio));
+}
+
+@media (max-width: 567px) {
+    :root {
+        --base-ratio: 100vw / 376;
+    }
+}

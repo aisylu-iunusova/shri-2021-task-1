@@ -1,0 +1,68 @@
+.User {
+  &-root {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: calc(20 * var(--base-ratio)) calc(20 * var(--base-ratio))
+      calc(16 * var(--base-ratio));
+  }
+
+  &-emoji {
+    position: absolute;
+    top: calc(-2 * var(--base-ratio));
+    line-height: calc(32 * var(--base-ratio));
+    font-size: calc(32 * var(--base-ratio));
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    width: calc(64 * var(--base-ratio));
+    height: calc(64 * var(--base-ratio));
+  }
+
+  &-name {
+    font-size: calc(16 * var(--base-ratio));
+    font-weight: 500;
+    line-height: calc(18 * var(--base-ratio));
+    margin-top: calc(6 * var(--base-ratio));
+  }
+
+  &-value {
+    font-size: calc(14 * var(--base-ratio));
+    font-weight: 400;
+    line-height: calc(16 * var(--base-ratio));
+    color: var(--color-greyLight);
+    margin-top: calc(4 * var(--base-ratio));
+    white-space: nowrap;
+  }
+
+  &-gorizontal {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  &-gorizontal &-content {
+    text-align: left;
+    padding-left: calc(14 * var(--base-ratio));
+  }
+
+  &-gorizontal &-avatar {
+    width: calc(40 * var(--base-ratio));
+    height: calc(40 * var(--base-ratio));
+    min-width: calc(40 * var(--base-ratio));
+    min-height: calc(40 * var(--base-ratio));
+  }
+
+  &-gorizontal &-name {
+    margin-top: 0;
+  }
+}

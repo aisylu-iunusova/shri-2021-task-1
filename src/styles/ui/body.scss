@@ -1,0 +1,16 @@
+.Body {
+  &-root {
+    font-size: calc(16 * var(--base-ratio));
+    font-style: normal;
+    font-weight: 500;
+    line-height: calc(18 * var(--base-ratio));
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-grey {
+    color: var(--color-greyLight);
+  }
+}
