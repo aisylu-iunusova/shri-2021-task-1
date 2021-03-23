@@ -109,7 +109,7 @@
 
     &:nth-child(3) span {
       background: radial-gradient(
-        100% 100% at 50% 0%,
+        100% 100% at 50% 100%,
         rgba(151, 151, 151, 0.5) 0%,
         rgba(41, 41, 41, 0.5) 100%
       );
@@ -142,6 +142,7 @@
 
   &-categoryDiff,
   &-categoryValue {
+    text-align: right;
     padding-left: calc(16 * var(--base-ratio));
   }
 }

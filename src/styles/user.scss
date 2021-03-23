@@ -41,7 +41,7 @@
     font-size: calc(14 * var(--base-ratio));
     font-weight: 400;
     line-height: calc(16 * var(--base-ratio));
-    color: rgba(191, 191, 191, 1);
+    color: rgba(145, 143, 138, 1);
     margin-top: calc(4 * var(--base-ratio));
     white-space: nowrap;
   }
@@ -65,5 +65,13 @@
 
   &-gorizontal &-name {
     margin-top: 0;
+  }
+}
+
+.theme_light {
+  .User {
+    &-value {
+      color: rgba(191, 191, 191, 1);
+    }
   }
 }
