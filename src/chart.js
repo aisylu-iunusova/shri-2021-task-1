@@ -23,12 +23,12 @@ class Chart {
                   <div class="Chart-bar">
                     <div class="Chart-barValue ${
                       active ? "Chart-barValue--active" : ""
-                    }">${value}</div>
+                    }">${value || ""}</div>
                     <div
                       class="Chart-barColumn ${
                         active ? "Chart-barColumn--active" : ""
                       }"
-                      style="height: calc(${value} / ${maxValue} * 70%);"
+                      style="height: calc(${value} / ${maxValue} * (70% - 30px));"
                     ></div>
                     <div class="Chart-barTitle">${title}</div>
                   </div>

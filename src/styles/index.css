@@ -1,5 +1,6 @@
 /* base */
 @import "./colors.scss";
+@import "./font.scss";
 @import "./base.scss";
 
 /* ui */
