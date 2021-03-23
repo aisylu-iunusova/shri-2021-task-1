@@ -21,7 +21,9 @@ class Chart {
               .map(({ value, title, active }) => {
                 return /* html */ `
                   <div class="Chart-bar">
-                    <div class="Chart-barValue">${value}</div>
+                    <div class="Chart-barValue ${
+                      active ? "Chart-barValue--active" : ""
+                    }">${value}</div>
                     <div
                       class="Chart-barColumn ${
                         active ? "Chart-barColumn--active" : ""

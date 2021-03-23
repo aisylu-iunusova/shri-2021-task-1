@@ -4,6 +4,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: calc(18 * var(--base-ratio));
+    margin-top: calc(8 * var(--base-ratio));
   }
 
   &-center {
@@ -11,6 +12,14 @@
   }
 
   &-grey {
-    color: var(--color-greyLight);
+    color: rgba(145, 143, 138, 1);
+  }
+}
+
+.theme_light {
+  .Body {
+    &-grey {
+      color: rgba(191, 191, 191, 1);
+    }
   }
 }

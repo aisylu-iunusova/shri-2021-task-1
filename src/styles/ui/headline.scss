@@ -5,11 +5,6 @@
     font-weight: 700;
     line-height: calc(32 * var(--base-ratio));
     letter-spacing: 0px;
-    color: var(--color-black);
-
-    & ~ .Body-root {
-      margin-top: calc(8 * var(--base-ratio));
-    }
   }
 
   &-center {

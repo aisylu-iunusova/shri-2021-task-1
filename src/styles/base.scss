@@ -1,20 +1,30 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 100%;
+  font-size: 100%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-    color: var(--color-black);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: rgba(252, 251, 247, 1);
+  background: radial-gradient(
+    70.24% 70.24% at 49.87% 29.76%,
+    rgba(19, 14, 0, 0.9) 0%,
+    #000000 100%
+  );
 }
 
 p,
 h1 {
-    margin: 0;
+  margin: 0;
+}
+
+.theme_light {
+  background: rgba(255, 255, 255, 1);
+  color: rgba(38, 28, 0, 1);
 }
