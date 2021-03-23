@@ -50,6 +50,7 @@
   &-gorizontal {
     flex-direction: row;
     padding: 0;
+    max-width: 100%;
   }
 
   &-gorizontal &-content {

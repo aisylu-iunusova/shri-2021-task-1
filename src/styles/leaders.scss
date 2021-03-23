@@ -18,6 +18,11 @@
     align-items: flex-end;
   }
 
+  &-user {
+    display: flex;
+    justify-content: center;
+  }
+
   &-chart {
     position: relative;
     display: flex;
