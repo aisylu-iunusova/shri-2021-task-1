@@ -3,17 +3,16 @@ import Chart from "./chart";
 import Diagram from "./diagram";
 import Layout from "./layout";
 import Activity from "./activity";
+import Vote from "./vote";
 
 class Stories {
   constructor() {
     this.layout = new Layout();
     this.leaders = new Leaders();
-    // this.vote = new Vote()
+    this.vote = new Vote();
     this.chart = new Chart();
     this.diagram = new Diagram();
     this.activity = new Activity();
-
-    window.renderTemplate = Stories.renderTemplate;
   }
 
   static renderTemplate(alias, data) {

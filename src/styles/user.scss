@@ -7,6 +7,7 @@
     text-align: center;
     padding: calc(20 * var(--base-ratio)) calc(20 * var(--base-ratio))
       calc(16 * var(--base-ratio));
+    max-width: calc(104 * var(--base-ratio));
   }
 
   &-emoji {

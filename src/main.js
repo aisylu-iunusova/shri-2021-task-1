@@ -2,6 +2,9 @@ import Stories from "./stories";
 import { getParamByName } from "./utils";
 import "./styles/index.css";
 
+// global
+window.renderTemplate = Stories.renderTemplate;
+
 fetch("/data/data.json")
   .then((res) => res.json())
   .then((result) => {

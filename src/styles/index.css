@@ -13,6 +13,7 @@
 @import "./ui/header.scss";
 @import "./user.scss";
 @import "./leaders.scss";
+@import "./vote.scss";
 @import "./chart.scss";
 @import "./diagram.scss";
 @import "./activity.scss";

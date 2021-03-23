@@ -35,7 +35,6 @@ export default {
   input: "src/main.js",
   output: {
     sourcemap: false,
-    format: "iife",
     name: "app",
     file: "build/stories.js",
   },
