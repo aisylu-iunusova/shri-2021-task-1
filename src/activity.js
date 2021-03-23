@@ -21,28 +21,31 @@ class Activity {
     const month = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
     return /* html */ `
-      <div class="Activity-root Activity-gorizontal">
-        ${month
-          .map((key) => {
-            return data[key]
-              .map((box, index) => {
-                const type =
-                  data[key][index] +
-                  (data[key][index + 1] == undefined
-                    ? 0
-                    : data[key][index + 1]);
+      <div class="Activity-root">
+        <div class="Activity-chart">
+          ${month
+            .map((key) => {
+              return data[key]
+                .map((box, index) => {
+                  const type =
+                    data[key][index] +
+                    (data[key][index + 1] == undefined
+                      ? 0
+                      : data[key][index + 1]);
 
-                return /* html */ !isNumberOdd(index)
-                  ? `
-                        <div class="Activity-houre">
-                          <img src="./assets/images/${this.getSrc(type)}.svg" />
-                        </div>
-                      `
-                  : null;
-              })
-              .join("");
-          })
-          .join("")}
+                  return !isNumberOdd(index)
+                    ? /* html */ `
+                      <div class="Activity-houre">
+                        <img src="./assets/images/${this.getSrc(type)}.svg" />
+                      </div>
+                    `
+                    : null;
+                })
+                .join("");
+            })
+            .join("")}
+        </div>
+        <div class="Activity-test"></div>
       </div>
     `;
   }

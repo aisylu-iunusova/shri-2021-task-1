@@ -52,7 +52,7 @@
     line-height: calc(18 * var(--base-ratio));
     font-weight: bold;
     text-align: center;
-    color: rgba(191, 191, 191, 1);
+    color: rgba(145, 143, 138, 1);
 
     @media (max-width: 567px) {
       margin-top: calc(8 * var(--base-ratio));
@@ -149,6 +149,10 @@
 
 .theme_light {
   .Diagram {
+    &-totalDiff {
+      color: rgba(191, 191, 191, 1);
+    }
+
     &-categoryItem {
       color: rgba(145, 143, 138, 1);
 

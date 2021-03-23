@@ -1,21 +1,29 @@
 .Activity {
   &-root {
     display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-chart {
+    display: flex;
     flex: 1;
     flex-direction: row;
-    padding-top: calc(92 * var(--base-ratio));
     flex-wrap: wrap;
     max-width: calc(34 * 12 * var(--base-ratio) + (17 * var(--base-ratio)));
-    max-height: calc(26 * 7 * var(--base-ratio));
+    max-height: calc(13 * 7 * var(--base-ratio));
     width: 100%;
+    margin-top: calc(18 * var(--base-ratio));
+    height: 100%;
   }
 
-  &-gorizontal {
-    flex-direction: row;
-  }
-
-  &-vetival {
-    flex-direction: column;
+  &-test {
+    margin-top: calc(32 * var(--base-ratio));
+    height: calc(38 * var(--base-ratio));
+    width: 100%;
   }
 
   &-houre {
