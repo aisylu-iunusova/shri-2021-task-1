@@ -63,6 +63,27 @@ class Leaders {
                     class="Leaders-bar ${isActive ? "Leaders-bar--active" : ""}"
                   >
                     ${rank}
+
+                    ${
+                      rank === 1
+                        ? /* html */ `
+                      <div class="Leaders-user">
+                        <div class="User-root" id="${id}">
+                          <div class="User-emoji">
+                            ${isActive ? "👍" : ""}
+                          </div>
+                          <img
+                            class="User-avatar"
+                            src="/assets/images/4x/${avatar}"
+                          />
+                          <div class="User-name">${name}</div>
+                          <div class="User-value">${valueText}</div>
+                        </div>
+                        <div class="Leaders-userLine">5</div>
+                      </div>
+                    `
+                        : ""
+                    }
                   </div>
                 </div>
               `;
