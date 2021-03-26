@@ -5,15 +5,17 @@ import "./styles/index.css";
 // global
 window.renderTemplate = Stories.renderTemplate;
 
-fetch("/data/data.json")
-  .then((res) => res.json())
-  .then((result) => {
-    const slide = getParamByName("slide");
-    const { alias, data } = slide ? result[slide - 1] : result[0];
+if (process.env.NODE_ENV) {
+  fetch("/data/data.json")
+    .then((res) => res.json())
+    .then((result) => {
+      const slide = getParamByName("slide");
+      const { alias, data } = slide ? result[slide - 1] : result[0];
 
-    document.body.innerHTML = Stories.renderTemplate(alias, data);
-  })
-  .catch((error) => {
-    console.error(error);
-    document.body.innerHTML = "Произошла ошибка при загрузки данных!";
-  });
+      document.body.innerHTML = Stories.renderTemplate(alias, data);
+    })
+    .catch((error) => {
+      console.error(error);
+      document.body.innerHTML = "Произошла ошибка при загрузки данных!";
+    });
+}

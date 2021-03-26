@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
+import replace from "@rollup/plugin-replace";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -43,6 +44,10 @@ export default {
       extract: true,
       plugins: [require("postcss-nested"), require("postcss-import")],
       minimize: production,
+    }),
+    replace({
+      preventAssignment: false,
+      "process.env.NODE_ENV": JSON.stringify(!production),
     }),
     resolve({
       browser: true,
