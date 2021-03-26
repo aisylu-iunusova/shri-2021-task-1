@@ -24,7 +24,9 @@ class Stories {
 
   setTheme() {
     const theme = getParamByName("theme");
-    document.body.className = `theme_${theme || "dark"}`;
+    const body = document.querySelector("body");
+
+    body.className = `theme_${theme || "dark"}`;
   }
 
   render(alias, data) {

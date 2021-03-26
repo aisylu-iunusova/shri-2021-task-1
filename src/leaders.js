@@ -1,5 +1,3 @@
-import { isNumberOdd } from "./utils";
-
 class Leaders {
   userLength = 5;
 

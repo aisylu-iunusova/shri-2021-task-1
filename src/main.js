@@ -11,8 +11,9 @@ if (process.env.NODE_ENV) {
     .then((result) => {
       const slide = getParamByName("slide");
       const { alias, data } = slide ? result[slide - 1] : result[0];
+      const body = document.querySelector("body");
 
-      document.body.innerHTML = Stories.renderTemplate(alias, data);
+      body.innerHTML = Stories.renderTemplate(alias, data);
     })
     .catch((error) => {
       console.error(error);
