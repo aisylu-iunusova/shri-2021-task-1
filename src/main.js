@@ -9,13 +9,11 @@ fetch("/data/data.json")
   .then((res) => res.json())
   .then((result) => {
     const slide = getParamByName("slide");
-    const theme = getParamByName("theme");
-
     const { alias, data } = slide ? result[slide - 1] : result[0];
 
-    document.body.className = `theme_${theme || "dark"}`;
     document.body.innerHTML = Stories.renderTemplate(alias, data);
   })
-  .catch(() => {
+  .catch((error) => {
+    console.error(error);
     document.body.innerHTML = "Произошла ошибка при загрузки данных!";
   });

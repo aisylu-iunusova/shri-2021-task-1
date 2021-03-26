@@ -12,10 +12,10 @@
   }
 
   &-charts {
-    display: flex;
+    display: grid;
     flex: 1;
-    justify-content: center;
-    align-items: flex-end;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "rank_5 rank_3 rank_1 rank_2 rank_4";
   }
 
   &-user {
@@ -29,12 +29,16 @@
     display: flex;
     flex-direction: column;
     min-width: calc(120 * var(--base-ratio));
-    flex: 1;
-    justify-content: flex-end;
+    align-self: end;
+
+    @media (max-width: 567px) {
+      &:nth-child(3) ~ * {
+        display: none;
+      }
+    }
 
     &[data-rank="1"] {
       height: calc(100% - 0px);
-      z-index: 5;
     }
 
     &[data-rank="2"],
@@ -45,10 +49,6 @@
     &[data-rank="4"],
     &[data-rank="5"] {
       height: calc(100% - calc(40 * var(--base-ratio)));
-
-      @media (max-width: 567px) {
-        display: none;
-      }
     }
 
     &[data-rank="3"],
@@ -76,8 +76,6 @@
     }
 
     &[data-rank="2"] {
-      z-index: 2;
-
       @media (max-width: 567px) {
         height: calc(100% - calc(50 * var(--base-ratio)));
       }
@@ -92,15 +90,15 @@
     &[data-rank="1"] > .Leaders-bar {
       .Leaders-userLine {
         width: 100%;
-        padding: 0 30px;
+        padding: 0 calc(30 * var(--base-ratio));
 
         &:before {
           content: "";
           display: flex;
           width: 100%;
-          height: 1px;
+          height: calc(1 * var(--base-ratio));
           background-color: rgba(145, 143, 138, 1);
-          margin-bottom: 6px;
+          margin-bottom: calc(6 * var(--base-ratio));
         }
       }
 
@@ -109,7 +107,7 @@
         margin-top: auto;
 
         .User-root {
-          padding-bottom: 9px;
+          padding-bottom: calc(9 * var(--base-ratio));
         }
 
         .User-value {

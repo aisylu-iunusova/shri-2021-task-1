@@ -1,51 +1,63 @@
 import { isNumberOdd } from "./utils";
 
 class Leaders {
-  preparedUsers({ users, selectedUserId }) {
-    const result = [];
+  userLength = 5;
 
-    users.slice(0, 5).forEach((user, index) => {
-      const results = {
-        rank: index + 1,
-        user,
-      };
+  device() {
+    if (window.innerWidth <= 567) {
+      this.userLength = 3;
+    }
+  }
 
-      if (selectedUserId && selectedUserId === user.id) {
-        results["selected"] = true;
-      }
-
-      if (isNumberOdd(index)) {
-        result.push(results);
-      } else {
-        result.unshift(results);
-      }
+  onResize() {
+    window.addEventListener("resize", () => {
+      this.device();
     });
 
-    if (selectedUserId && !result.find((i) => i.user.id === selectedUserId)) {
-      result.shift();
-      result.unshift({
-        rank: 5,
-        user: users.find((i) => i.id === selectedUserId),
-      });
-    }
+    this.device();
+  }
+
+  preparedUsers({ users, selectedUserId }, length) {
+    const result = [];
+
+    users.forEach((user, index) => {
+      index < length && result.push(user);
+
+      if (user.id === selectedUserId && index > length - 1) {
+        result.pop();
+        result.push(user);
+      }
+    });
 
     return result;
   }
 
   template(data) {
-    const { emoji } = data;
-    const users = this.preparedUsers(data);
+    this.onResize();
+
+    const { emoji, selectedUserId } = data;
+    const users = this.preparedUsers(data, this.userLength);
 
     return /* html */ `
       <div class="Leaders-root">
         <div class="Leaders-charts">
           ${users
-            .map(({ rank, user, selected }, index) => {
+            .slice(0, this.userLength)
+            .map((user, index) => {
               const { id, avatar, name, valueText } = user;
-              const isActive = Math.floor(users.length / 2) === index;
+              const isActive = index === 0;
+              const rank = index + 1;
+              const selected = id === selectedUserId;
+              const selectUser =
+                rank === 1 &&
+                data.users[this.userLength - 1].id !==
+                  users[this.userLength - 1].id &&
+                users[this.userLength - 1];
 
               return /* html */ `
-                <div class="Leaders-chart" data-rank="${rank}">
+                <div class="Leaders-chart" style="grid-area: rank_${rank};z-index: ${
+                this.userLength - index
+              }" data-rank="${rank}">
                   <div class="Leaders-user">
                     <div class="User-root" id="${id}">
                       <div class="User-emoji">
@@ -63,26 +75,26 @@ class Leaders {
                     class="Leaders-bar ${isActive ? "Leaders-bar--active" : ""}"
                   >
                     ${rank}
-
+                    
                     ${
-                      rank === 1
+                      selectUser
                         ? /* html */ `
-                      <div class="Leaders-user">
-                        <div class="User-root" id="${id}">
-                          <div class="User-emoji">
-                            ${isActive ? "👍" : ""}
+                          <div class="Leaders-user">
+                            <div class="User-root" id="${selectUser.id}">
+                              <div class="User-emoji">
+                                👍
+                              </div>
+                              <img
+                                class="User-avatar"
+                                src="/assets/images/4x/${selectUser.avatar}"
+                              />
+                              <div class="User-name">${selectUser.name}</div>
+                              <div class="User-value">${selectUser.valueText}</div>
+                            </div>
+                            <div class="Leaders-userLine">5</div>
                           </div>
-                          <img
-                            class="User-avatar"
-                            src="/assets/images/4x/${avatar}"
-                          />
-                          <div class="User-name">${name}</div>
-                          <div class="User-value">${valueText}</div>
-                        </div>
-                        <div class="Leaders-userLine">5</div>
-                      </div>
-                    `
-                        : ""
+                        `
+                        : ``
                     }
                   </div>
                 </div>

@@ -4,6 +4,7 @@ import Diagram from "./diagram";
 import Layout from "./layout";
 import Activity from "./activity";
 import Vote from "./vote";
+import { getParamByName } from "./utils";
 
 class Stories {
   constructor() {
@@ -13,10 +14,17 @@ class Stories {
     this.chart = new Chart();
     this.diagram = new Diagram();
     this.activity = new Activity();
+
+    this.setTheme();
   }
 
   static renderTemplate(alias, data) {
     return new Stories().render(alias, data);
+  }
+
+  setTheme() {
+    const theme = getParamByName("theme");
+    document.body.className = `theme_${theme || "dark"}`;
   }
 
   render(alias, data) {
