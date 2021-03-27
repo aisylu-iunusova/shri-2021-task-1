@@ -1,11 +1,6 @@
 class Leaders {
-  userLength = 5;
-
-  device() {
-    if (window.innerWidth <= 567) {
-      this.userLength = 3;
-    }
-  }
+  userMaxLength = 5;
+  userMinLength = 3;
 
   preparedUsers({ users, selectedUserId }, length) {
     const result = [];
@@ -22,29 +17,34 @@ class Leaders {
     return result;
   }
 
+  getSelectUser({ users, selectedUserId }, length) {
+    return users.find(
+      (user, index) => user.id === selectedUserId && index > length - 1
+    );
+  }
+
   template(data) {
     const { emoji, selectedUserId } = data;
-    const users = this.preparedUsers(data, this.userLength);
+    const users = this.preparedUsers(data, this.userMaxLength);
+    const selectedUser = this.getSelectUser(data, this.userMinLength);
+
+    console.log(selectedUser);
 
     return /* html */ `
       <div class="Leaders-root">
         <div class="Leaders-charts">
           ${users
-            .slice(0, this.userLength)
+            .slice(0, 5)
             .map((user, index) => {
               const { id, avatar, name, valueText } = user;
               const isActive = index === 0;
               const rank = index + 1;
               const selected = id === selectedUserId;
-              const selectUser =
-                rank === 1 &&
-                data.users[this.userLength - 1].id !==
-                  users[this.userLength - 1].id &&
-                users[this.userLength - 1];
+              const selectUser = rank === 1 && selectedUser;
 
               return /* html */ `
                 <div class="Leaders-chart" style="grid-area: rank_${rank};z-index: ${
-                this.userLength - index
+                this.userMaxLength - index
               }" data-rank="${rank}">
                   <div class="Leaders-user">
                     <div class="User-root" id="${id}">

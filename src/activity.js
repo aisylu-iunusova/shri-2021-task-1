@@ -27,11 +27,7 @@ class Activity {
             .map((key) => {
               return data[key]
                 .map((box, index) => {
-                  const type =
-                    data[key][index] +
-                    (data[key][index + 1] == undefined
-                      ? 0
-                      : data[key][index + 1]);
+                  const type = data[key][index] + (data[key][index + 1] || 0);
 
                   return !isNumberOdd(index)
                     ? /* html */ `
