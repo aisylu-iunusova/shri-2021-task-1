@@ -1,5 +1,5 @@
 import Stories from "./stories";
-import { getParamByName } from "./utils";
+import { getParamByName, getAppTheme } from "./utils";
 
 import "./styles/index.css";
 
@@ -10,12 +10,11 @@ if (process.env.NODE_ENV) {
     .then((res) => res.json())
     .then((result) => {
       const slide = getParamByName("slide");
-      const theme = getParamByName("theme");
       const body = document.querySelector("body");
 
       const { alias, data } = slide ? result[slide - 1] : result[0];
 
-      body.className = `theme_${theme || "dark"}`;
+      body.className = `theme_${getAppTheme()}`;
       body.innerHTML = Stories.renderTemplate(alias, data);
     })
     .catch((error) => {

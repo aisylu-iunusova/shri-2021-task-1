@@ -33,3 +33,13 @@ export function getParamByName(name, url) {
 
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+export function getApp() {
+  return window.innerWidth >= 567 ? "desktop" : "mobile";
+}
+
+export function getAppTheme() {
+  const theme = getParamByName("theme");
+
+  return `${theme || "dark"}`;
+}

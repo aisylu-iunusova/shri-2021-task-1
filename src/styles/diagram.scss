@@ -8,8 +8,11 @@
 
     @media (max-width: 567px) {
       grid-template-columns: 1fr;
-      padding: calc(32 * var(--base-ratio)) calc(24 * var(--base-ratio)) 0;
-      gap: 32px;
+      grid-template-rows: 1fr 0fr;
+      padding: calc(32 * var(--base-ratio)) calc(24 * var(--base-ratio))
+        calc(24 * var(--base-ratio));
+      gap: calc(32 * var(--base-ratio));
+      flex: 1;
     }
   }
 

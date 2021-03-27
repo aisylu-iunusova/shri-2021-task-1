@@ -6,18 +6,30 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    padding: 0 calc(121.5 * var(--base-ratio));
+    padding-top: calc(80 * var(--base-ratio));
+
+    @media (max-width: 567px) {
+      padding: 0 calc(24 * var(--base-ratio));
+      padding-top: calc(60 * var(--base-ratio));
+      padding-bottom: calc(112 * var(--base-ratio));;
+    }
   }
 
   &-chart {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: calc(34 * 12 * var(--base-ratio) + (17 * var(--base-ratio)));
-    max-height: calc(13 * 7 * var(--base-ratio));
     width: 100%;
-    margin-top: calc(18 * var(--base-ratio));
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(25, calc(100% / 25));
+    grid-template-rows: repeat(7, calc(100% / 17));
+    grid-template-areas: "mon" "tue" "wed" "thu" "fri" "sat" "sun";
+
+    @media (max-width: 567px) {
+      max-width: 100%;
+      grid-template-columns: repeat(15, calc(100% / 15));
+      grid-template-rows: repeat(25, calc(100% / 25));
+      grid-template-areas: "mon" "tue" "wed" "thu" "fri" "sat" "sun"; 
+    }
   }
 
   &-test {
@@ -28,17 +40,18 @@
 
   &-houre {
     position: relative;
-    flex: 0 1 calc(34 * var(--base-ratio));
 
-    &:nth-child(24n - 11) {
-      margin-left: calc(17 * var(--base-ratio));
-    }
-
-    img {
+    picture {
       position: absolute;
       bottom: 0px;
       left: 0;
       right: 0;
+      width: 100%;
+    }
+
+    img {
+      filter: none;
+      vertical-align: top;
       width: 100%;
     }
   }
