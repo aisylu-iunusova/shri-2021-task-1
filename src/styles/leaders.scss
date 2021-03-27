@@ -144,7 +144,7 @@
     font-weight: 700;
     line-height: calc(32 * var(--base-ratio));
     text-align: center;
-    padding: calc(18 * var(--base-ratio)) 0;
+    padding: calc(18 * var(--base-ratio)) 0 calc(16 * var(--base-ratio));
 
     &--active {
       background: radial-gradient(

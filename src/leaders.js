@@ -7,14 +7,6 @@ class Leaders {
     }
   }
 
-  onResize() {
-    window.addEventListener("resize", () => {
-      this.device();
-    });
-
-    this.device();
-  }
-
   preparedUsers({ users, selectedUserId }, length) {
     const result = [];
 
@@ -31,8 +23,6 @@ class Leaders {
   }
 
   template(data) {
-    this.onResize();
-
     const { emoji, selectedUserId } = data;
     const users = this.preparedUsers(data, this.userLength);
 
