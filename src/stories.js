@@ -14,19 +14,10 @@ class Stories {
     this.chart = new Chart();
     this.diagram = new Diagram();
     this.activity = new Activity();
-
-    this.setTheme();
   }
 
   static renderTemplate(alias, data) {
     return new Stories().render(alias, data);
-  }
-
-  setTheme() {
-    const theme = getParamByName("theme");
-    const body = document.querySelector("body");
-
-    body.className = `theme_${theme || "dark"}`;
   }
 
   render(alias, data) {
