@@ -1,6 +1,7 @@
 class Leaders {
   userMaxLength = 5;
   userMinLength = 3;
+  selectUser = null;
 
   preparedUsers({ users, selectedUserId }, length) {
     const result = [];
@@ -8,7 +9,8 @@ class Leaders {
     users.forEach((user, index) => {
       index < length && result.push(user);
 
-      if (user.id === selectedUserId && index > length - 1) {
+      if (user.id === selectedUserId && index > 2) {
+        this.selectUser = user;
         result.pop();
         result.push(user);
       }
@@ -17,24 +19,19 @@ class Leaders {
     return result;
   }
 
-  getSelectUser({ users, selectedUserId }, length) {
-    return users.find(
-      (user, index) => user.id === selectedUserId && index > length - 1
-    );
+  getSelectUser() {
+    return this.selectUser;
   }
 
   template(data) {
     const { emoji, selectedUserId } = data;
     const users = this.preparedUsers(data, this.userMaxLength);
-    const selectedUser = this.getSelectUser(data, this.userMinLength);
-
-    console.log(selectedUser);
+    const selectedUser = this.selectUser;
 
     return /* html */ `
       <div class="Leaders-root">
         <div class="Leaders-charts">
           ${users
-            .slice(0, 5)
             .map((user, index) => {
               const { id, avatar, name, valueText } = user;
               const isActive = index === 0;
