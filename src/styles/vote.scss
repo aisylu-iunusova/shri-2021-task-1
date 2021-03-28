@@ -1,7 +1,7 @@
 .Vote {
   &-root {
     display: flex;
-    padding: 0 calc(32 * var(--base-ratio));
+    padding: 0 calc(31 * var(--base-ratio));
 
     @media (max-width: 567px) {
       padding: 0 calc(24 * var(--base-ratio));
@@ -34,7 +34,7 @@
         "main7 main5 main8"
         "main7 nav2 main8";
       column-gap: calc(8 * var(--base-ratio));
-      row-gap: calc(19 * var(--base-ratio));
+      row-gap: calc(20 * var(--base-ratio));
     }
   }
 
@@ -46,6 +46,27 @@
 
     @media (max-width: 567px) {
       justify-self: center;
+    }
+
+    &[data-nav="up"] {
+      margin-top: calc(100% / 3 * 2);
+      margin-bottom: calc(100% / 3 - (4 * var(--base-ratio)));
+
+      @media (max-width: 567px) {
+        justify-self: center;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &[data-nav="down"] {
+      margin-bottom: calc(100% / 3 * 2);
+      margin-top: calc(100% / 3 - (4 * var(--base-ratio)));
+
+      @media (max-width: 567px) {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
     }
 
     &:nth-child(3),
