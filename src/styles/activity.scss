@@ -6,29 +6,27 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 0 calc(121.5 * var(--base-ratio));
-    padding-top: calc(80 * var(--base-ratio));
 
     @media (max-width: 567px) {
       padding: 0 calc(24 * var(--base-ratio));
-      padding-top: calc(60 * var(--base-ratio));
-      padding-bottom: calc(112 * var(--base-ratio));;
+      padding-bottom: calc(70 * var(--base-ratio));
     }
   }
 
   &-chart {
-    width: 100%;
-    height: 100%;
     display: grid;
-    grid-template-columns: repeat(25, calc(100% / 25));
-    grid-template-rows: repeat(7, calc(100% / 17));
-    grid-template-areas: "mon" "tue" "wed" "thu" "fri" "sat" "sun";
+    grid-template-columns: repeat(25, calc(17 * var(--base-ratio)));
+    grid-template-rows: repeat(8, calc(13 * var(--base-ratio)));
+    padding-top: calc(8 * var(--base-ratio));
+    padding-bottom: calc(70 * var(--base-ratio));
 
     @media (max-width: 567px) {
+      padding-top: 0;
+      padding-bottom: 0;
+      width: 100%;
       max-width: 100%;
-      grid-template-columns: repeat(15, calc(100% / 15));
-      grid-template-rows: repeat(25, calc(100% / 25));
-      grid-template-areas: "mon" "tue" "wed" "thu" "fri" "sat" "sun"; 
+      grid-template-columns: repeat(15, calc(21.865 * var(--base-ratio)));
+      grid-template-rows: repeat(26, calc(16.72 * var(--base-ratio)));
     }
   }
 
@@ -41,18 +39,47 @@
   &-houre {
     position: relative;
 
-    picture {
+    span {
       position: absolute;
       bottom: 0px;
       left: 0;
       right: 0;
       width: 100%;
+      height: calc(100 * var(--base-ratio));
     }
+  }
+}
 
-    img {
-      filter: none;
-      vertical-align: top;
-      width: 100%;
-    }
+.img_chart {
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+}
+
+.img_chart--min {
+  background-image: url("/assets/images/1x/min-dark.png");
+}
+.img_chart--mid {
+  background-image: url("/assets/images/1x/mid-dark.png");
+}
+.img_chart--max {
+  background-image: url("/assets/images/1x/max-dark.png");
+}
+.img_chart--extra {
+  background-image: url("/assets/images/1x/extra-dark.png");
+}
+
+.theme_light {
+  .img_chart--min {
+    background-image: url("/assets/images/1x/min-light.png");
+  }
+  .img_chart--mid {
+    background-image: url("/assets/images/1x/mid-light.png");
+  }
+  .img_chart--max {
+    background-image: url("/assets/images/1x/max-light.png");
+  }
+  .img_chart--extra {
+    background-image: url("/assets/images/1x/extra-light.png");
   }
 }

@@ -2,22 +2,21 @@ import { isNumberOdd, getAppTheme, getApp } from "./utils";
 
 class Activity {
   week = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-  getSrc(type) {
-    const theme = getAppTheme();
 
+  getSrc(type) {
     if (type >= 1 && type <= 2) {
-      return "mid-" + theme;
+      return "mid";
     }
 
     if (type >= 3 && type <= 4) {
-      return "max-" + theme;
+      return "max";
     }
 
     if (type >= 5 && type <= 6) {
-      return "extra-" + theme;
+      return "extra";
     }
 
-    return "min-" + theme;
+    return "min";
   }
 
   getCommits(data) {
@@ -52,11 +51,9 @@ class Activity {
             grid-column: ${
               !isNumberOdd(index) ? 2 * dayIndex + 1 : 2 * dayIndex + 2
             } / span 2;
-            grid-row: ${index + 2};
+            grid-row: ${index + 1} / span 3;
           ">
-          <picture>
-            <img src="./assets/images/1x/${this.getSrc(commits)}.png" />
-          </picture>
+          <span class="img_chart img_chart--${this.getSrc(commits)}"></span>
         </div>
       `;
       })
@@ -75,11 +72,9 @@ class Activity {
             grid-column: ${
               !isNumberOdd(dayIndex) ? 2 * index + 1 : 2 * index + 2
             } / span 2;
-            grid-row: ${dayIndex + 1};
+            grid-row: ${dayIndex + 1} / span 2;
           ">
-          <picture>
-            <img src="./assets/images/1x/${this.getSrc(commits)}.png" />
-          </picture>
+          <span class="img_chart img_chart--${this.getSrc(commits)}"></span>
         </div>
       `;
       })
