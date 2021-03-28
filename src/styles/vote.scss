@@ -22,6 +22,7 @@
       "main1 main2 nav1 main3 main4"
       "main1 main5 nav2 main6 main4";
     row-gap: calc(4 * var(--base-ratio));
+    column-gap: calc(31 * var(--base-ratio));
 
     @media (max-width: 567px) {
       grid-template-columns: 1fr 1fr 1fr;
