@@ -5,6 +5,8 @@
 
     @media (max-width: 567px) {
       padding: 0 calc(24 * var(--base-ratio));
+      padding-top: calc(4 * var(--base-ratio));
+      padding-bottom: calc(4 * var(--base-ratio));
     }
   }
 
@@ -35,7 +37,7 @@
         "main7 main5 main8"
         "main7 nav2 main8";
       column-gap: calc(8 * var(--base-ratio));
-      row-gap: calc(20 * var(--base-ratio));
+      row-gap: 1.2em;
     }
   }
 
