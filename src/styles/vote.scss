@@ -161,10 +161,14 @@
     max-height: calc(64 * var(--base-ratio));
     cursor: pointer;
     vertical-align: top;
+    width: calc(64 * var(--base-ratio));
+    height: calc(64 * var(--base-ratio));
+    background-image: url("/assets/images/button-dark.svg");
 
     &[disabled] {
-      opacity: 0.5;
       pointer-events: none;
+
+      background-image: url("/assets/images/button-hover-dark.svg");
     }
 
     &--prev {
@@ -199,6 +203,14 @@
           box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5),
             inset 0px 0px 20px rgba(255, 176, 57, 0.8);
         }
+      }
+    }
+
+    &-navButton {
+      background-image: url("/assets/images/button-light.svg");
+
+      &[disabled] {  
+        background-image: url("/assets/images/button-hover-light.svg");
       }
     }
   }
