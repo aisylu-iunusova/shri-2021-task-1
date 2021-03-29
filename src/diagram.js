@@ -1,5 +1,3 @@
-import { PlotIcon } from "./icons/plot";
-
 class Diagram {
   template(data) {
     const { categories } = data;
