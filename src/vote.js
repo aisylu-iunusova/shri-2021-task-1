@@ -41,7 +41,7 @@ class Vote {
             </div>
             <div class="Vote-area" data-action="update" data-params='{ \"alias\": \"leaders\", \"data\": { \"offset\": ${nextSlide} }}' data-nav="down" style="grid-area: nav-button-down;">
               <button class="Vote-navButton Vote-navButton--next" disabled="${
-                users.length <= nextSlide ? "true" : "false"
+                users.length <= this.nextSlide ? "true" : "false"
               }"></button>  
             </div>
         </div>
