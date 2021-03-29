@@ -1,17 +1,17 @@
 import { getApp } from "./utils";
 
 class Vote {
-  nextSlide = getApp() === "mobile" ? 8 : 6;
+  defaultSlide = getApp() === "mobile" ? 8 : 6;
 
   template({ users, selectedUserId, offset = 0 }) {
-    let prevSlide = offset && offset - this.nextSlide;
-    let nextSlide = offset + this.nextSlide;
+    let prevSlide = offset && offset - this.defaultSlide;
+    let nextSlide = offset + this.defaultSlide;
 
     return /* html */ `
       <div class="Vote-root">
         <div class="Vote-areas">
             ${users
-              .slice(offset, offset + this.nextSlide)
+              .slice(offset, offset + this.defaultSlide)
               .map(({ id, avatar, name }, index) => {
                 const isActive = selectedUserId === id;
 
@@ -41,7 +41,7 @@ class Vote {
             </div>
             <div class="Vote-area" data-action="update" data-params='{ \"alias\": \"leaders\", \"data\": { \"offset\": ${nextSlide} }}' data-nav="down" style="grid-area: nav-button-down;">
               <button class="Vote-navButton Vote-navButton--next" disabled="${
-                users.length <= this.nextSlide ? "true" : "false"
+                users.length <= nextSlide ? "true" : "false"
               }"></button>  
             </div>
         </div>
