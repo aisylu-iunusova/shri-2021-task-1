@@ -34,15 +34,15 @@ class Vote {
               })
               .join("")}
 
-            <div class="Vote-area" data-action="update" data-params='{ \"alias\": \"leaders\", \"data\": { \"offset\": ${prevSlide} }}' data-nav="up" style="grid-area: nav-button-up;">
+            <div class="Vote-area" data-nav="up" style="grid-area: nav-button-up;">
               <button class="Vote-navButton Vote-navButton--prev" disabled="${
                 !offset ? "true" : "false"
-              }"></button>
+              }" data-action="update" data-params='{ \"alias\": \"leaders\", \"data\": { \"offset\": ${prevSlide} }}' ></button>
             </div>
-            <div class="Vote-area" data-action="update" data-params='{ \"alias\": \"leaders\", \"data\": { \"offset\": ${nextSlide} }}' data-nav="down" style="grid-area: nav-button-down;">
+            <div class="Vote-area" data-nav="down" style="grid-area: nav-button-down;">
               <button class="Vote-navButton Vote-navButton--next" disabled="${
                 users.length <= nextSlide ? "true" : "false"
-              }"></button>  
+              }" data-action="update" data-params='{ \"alias\": \"leaders\", \"data\": { \"offset\": ${nextSlide} }}'></button>  
             </div>
         </div>
       </div>
