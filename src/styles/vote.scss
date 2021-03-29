@@ -96,30 +96,6 @@
       }
     }
 
-    &:nth-child(7) {
-      align-self: end;
-
-      & > button {
-        margin-bottom: 40%;
-      }
-
-      @media (max-width: 567px) {
-        align-self: center;
-      }
-    }
-
-    &:nth-child(8) {
-      align-self: start;
-
-      & > button {
-        margin-top: 40%;
-      }
-
-      @media (max-width: 567px) {
-        align-self: center;
-      }
-    }
-
     &[data-active="true"] {
       background: radial-gradient(
         91.67% 122.17% at 69.17% -11.17%,
@@ -184,7 +160,7 @@
     background-position: center;
     background-image: url("/assets/images/button-dark.svg");
 
-    &[disabled],
+    &[disabled="true"],
     &:active {
       pointer-events: none;
 
