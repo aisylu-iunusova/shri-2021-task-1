@@ -37,7 +37,7 @@
         "main7 main5 main8"
         "main7 nav2 main8";
       column-gap: calc(8 * var(--base-ratio));
-      row-gap: 1.2em;
+      row-gap: 1.23em;
     }
   }
 
@@ -75,6 +75,7 @@
     &:nth-child(2) {
       @media (max-width: 567px) {
         align-self: end;
+        margin-bottom: calc(1 * var(--base-ratio));
       }
     }
 
@@ -91,6 +92,7 @@
     &:nth-child(5) {
       @media (max-width: 567px) {
         align-self: start;
+        margin-top: calc(1 * var(--base-ratio));
       }
     }
 
