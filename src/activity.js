@@ -53,7 +53,9 @@ class Activity {
             } / span 2;
             grid-row: ${index + 1} / span 3;
           ">
-          <span class="Activity-chart Activity-chart--${this.getSrc(commits)}"></span>
+          <span class="Activity-chart Activity-chart--${this.getSrc(
+            commits
+          )}"></span>
         </div>
       `;
       })
@@ -98,25 +100,25 @@ class Activity {
             .join("")}
         </div>
         <div class="Activity-intervals">
-          <div class="Activity-interval">
+          <div class="Activity-interval Activity-interval-1">
             <div class="Activity-intervalImg Activity-intervalImg-1"></div>
-            <div class="Activity-intervalText">${getApp() === "mobile" ? '1 час' : '2 часа'}</div>
+            <div class="Activity-intervalText Activity-intervalText-1"></div>
           </div>
-          <div class="Activity-interval">
+          <div class="Activity-interval Activity-interval-0">
             <div class="Activity-intervalImg Activity-intervalImg-0"></div>
-            <div class="Activity-intervalText">0</div>
+            <div class="Activity-intervalText Activity-intervalText-0"></div>
           </div>
-          <div class="Activity-interval">
+          <div class="Activity-interval Activity-interval-1-2">
             <div class="Activity-intervalImg Activity-intervalImg-1-2"></div>
-            <div class="Activity-intervalText">1 — 2</div>
+            <div class="Activity-intervalText Activity-intervalText-1-2"></div>
           </div>
-          <div class="Activity-interval">
+          <div class="Activity-interval Activity-interval-3-4">
             <div class="Activity-intervalImg Activity-intervalImg-3-4"></div>
-            <div class="Activity-intervalText">3 — 4</div>
+            <div class="Activity-intervalText Activity-intervalText-3-4"></div>
           </div>
-          <div class="Activity-interval">
+          <div class="Activity-interval Activity-interval-5-6">
             <div class="Activity-intervalImg Activity-intervalImg-5-6"></div>
-            <div class="Activity-intervalText">5 — 6</div>
+            <div class="Activity-intervalText Activity-intervalText-5-6"></div>
           </div>
         </div>
       </div>

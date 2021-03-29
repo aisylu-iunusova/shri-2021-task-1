@@ -176,6 +176,40 @@
     color: #918f8a;
     text-align: center;
 
+    &-1 {
+      &:after {
+        content: "2 часа";
+
+        @media (max-width: 567px) {
+          content: "1 час";
+        }
+      }
+    }
+
+    &-0 {
+      &:after {
+        content: "0";
+      }
+    }
+
+    &-1-2 {
+      &:after {
+        content: "1 — 2";
+      }
+    }
+
+    &-3-4 {
+      &:after {
+        content: "3 — 4";
+      }
+    }
+
+    &-5-6 {
+      &:after {
+        content: "5 — 6";
+      }
+    }
+
     @media (max-width: 567px) {
       text-align: left;
     }
