@@ -72,6 +72,12 @@
       }
     }
 
+    &:nth-child(2) {
+      @media (max-width: 567px) {
+        align-self: end;
+      }
+    }
+
     &:nth-child(3),
     &:nth-child(4),
     &:nth-child(6) {
@@ -79,6 +85,12 @@
 
       @media (max-width: 567px) {
         justify-self: center;
+      }
+    }
+
+    &:nth-child(5) {
+      @media (max-width: 567px) {
+        align-self: start;
       }
     }
 
