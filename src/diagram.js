@@ -7,7 +7,7 @@ class Diagram {
     return /* html */ `
       <div class="Diagram-root">
         <div class="Diagram-chart">
-          ${PlotIcon}
+          <div class="Diagram-svg"></div>
           <div class="Diagram-total">
             <div class="Diagram-totalText">182 коммита</div>
             <div class="Diagram-totalDiff">+42 с прошлого спринта</div>

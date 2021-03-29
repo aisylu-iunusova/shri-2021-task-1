@@ -5,6 +5,7 @@ import "./styles/index.css";
 
 window.renderTemplate = Stories.renderTemplate;
 
+// development
 if (process.env.NODE_ENV) {
   fetch("/data/data.json")
     .then((res) => res.json())

@@ -16,6 +16,13 @@
     }
   }
 
+  &-svg {
+    padding-bottom: 100%;
+    background-image: url("/assets/images/diagramma-dark.svg");
+    background-position: center;
+    background-size: cover;
+  }
+
   &-chart {
     position: relative;
   }
@@ -152,6 +159,10 @@
 
 .theme_light {
   .Diagram {
+    &-svg {
+      background-image: url("/assets/images/diagramma-light.svg");
+    }
+
     &-totalDiff {
       color: rgba(191, 191, 191, 1);
     }
