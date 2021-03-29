@@ -21,8 +21,8 @@
     grid-template-columns: 1fr 1fr calc(64 * var(--base-ratio)) 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
-      "main1 main2 nav1 main3 main4"
-      "main1 main5 nav2 main6 main4";
+      "area1 area2 nav-button-up area3 area4"
+      "area1 area5 nav-button-down area6 area4";
     row-gap: calc(4 * var(--base-ratio));
     column-gap: calc(30 * var(--base-ratio));
 
@@ -30,12 +30,12 @@
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-areas:
-        "main1 nav1 main3"
-        "main1 main2 main3"
-        "main4 main2 main6"
-        "main4 main5 main6"
-        "main7 main5 main8"
-        "main7 nav2 main8";
+        "area1 nav-button-up area3"
+        "area1 area2 area3"
+        "area4 area2 area6"
+        "area4 area5 area6"
+        "area7 area5 area8"
+        "area7 nav-button-down area8";
       column-gap: calc(8 * var(--base-ratio));
       row-gap: 1.23em;
     }

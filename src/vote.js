@@ -8,7 +8,7 @@ class Vote {
                 const isActive = selectedUserId === id;
 
                 return /* html */ `
-                    <div class="Vote-area" style="grid-area: main${
+                    <div class="Vote-area" style="grid-area: area${
                       index + 1
                     };" data-active="${isActive ? "true" : "false"}">
                         <div class="User-root" id="${id}">
@@ -26,11 +26,11 @@ class Vote {
               })
               .join("")}
 
-            <div class="Vote-area" data-nav="up" style="grid-area: nav1;">
+            <div class="Vote-area" data-nav="up" style="grid-area: nav-button-up;">
                 <button class="Vote-navButton Vote-navButton--prev" disabled>
                 </button>
             </div>
-            <div class="Vote-area" data-nav="down" style="grid-area: nav2;">
+            <div class="Vote-area" data-nav="down" style="grid-area: nav-button-down;">
                 <button class="Vote-navButton Vote-navButton--next">
                 </button>  
             </div>
