@@ -1,4 +1,4 @@
-import { isNumberOdd, getAppTheme, getApp } from "./utils";
+import { isNumberOdd, getApp } from "./utils";
 
 class Activity {
   week = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
