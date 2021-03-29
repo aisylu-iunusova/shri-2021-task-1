@@ -27,12 +27,10 @@ class Vote {
               .join("")}
 
             <div class="Vote-area" data-nav="up" style="grid-area: nav-button-up;">
-                <button class="Vote-navButton Vote-navButton--prev" disabled>
-                </button>
+                <button class="Vote-navButton Vote-navButton--prev" disabled></button>
             </div>
             <div class="Vote-area" data-nav="down" style="grid-area: nav-button-down;">
-                <button class="Vote-navButton Vote-navButton--next">
-                </button>  
+                <button class="Vote-navButton Vote-navButton--next"></button>  
             </div>
         </div>
       </div>
