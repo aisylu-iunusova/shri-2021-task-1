@@ -4,8 +4,12 @@ class Vote {
   defaultSlide = getApp() === "mobile" ? 8 : 6;
 
   template({ users, selectedUserId, offset = 0 }) {
-    let prevSlide = offset && offset - this.defaultSlide;
-    let nextSlide = offset + this.defaultSlide;
+    let prevSlide = Math.max(0, offset - this.defaultSlide);
+    let nextSlide = Math.min(
+      Math.ceil(users.length / this.defaultSlide) * this.defaultSlide -
+        this.defaultSlide,
+      offset + this.defaultSlide
+    );
 
     return /* html */ `
       <div class="Vote-root">
@@ -34,15 +38,27 @@ class Vote {
               })
               .join("")}
 
-            <div class="Vote-area" data-nav="up" style="grid-area: nav-button-up;">
-              <button class="Vote-navButton Vote-navButton--prev" disabled="${
-                !offset ? "true" : "false"
-              }" data-action="update" data-params='{ \"alias\": \"vote\", \"data\": { \"offset\": ${prevSlide} }}' ></button>
+            <div
+              class="Vote-area"
+              data-nav="up"
+              style="grid-area: nav-button-up;"
+              data-action="update"
+              data-params='{ \"alias\": \"vote\", \"data\": { \"offset\": ${prevSlide} }}'
+            >
+              <button class="Vote-navButton Vote-navButton--prev" ${
+                !offset ? "disabled" : ""
+              }></button>
             </div>
-            <div class="Vote-area" data-nav="down" style="grid-area: nav-button-down;">
-              <button class="Vote-navButton Vote-navButton--next" disabled="${
-                users.length <= nextSlide ? "true" : "false"
-              }" data-action="update" data-params='{ \"alias\": \"vote\", \"data\": { \"offset\": ${nextSlide} }}'></button>  
+            <div 
+              class="Vote-area"
+              data-nav="down"
+              style="grid-area: nav-button-down;"
+              data-action="update"
+              data-params='{ \"alias\": \"vote\", \"data\": { \"offset\": ${nextSlide} }}'
+            >
+              <button class="Vote-navButton Vote-navButton--next" ${
+                offset === nextSlide ? "disabled" : ""
+              }></button>  
             </div>
         </div>
       </div>
