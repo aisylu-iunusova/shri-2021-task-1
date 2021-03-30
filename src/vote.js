@@ -16,7 +16,7 @@ class Vote {
                 const isActive = selectedUserId === id;
 
                 return /* html */ `
-                <div class="Vote-area" data-action="update" data-params='{ \"alias\": \"leaders\", \"data\": { \"selectedUserId\": ${id} }}' style="grid-area: area${
+                <div class="Vote-area" data-action="update" data-params='{ \"alias\": \"vote\", \"data\": { \"selectedUserId\": ${id} }}' style="grid-area: area${
                   index + 1
                 };" data-active="${isActive ? "true" : "false"}">
                   <div class="User-root" id="${id}">
@@ -37,12 +37,12 @@ class Vote {
             <div class="Vote-area" data-nav="up" style="grid-area: nav-button-up;">
               <button class="Vote-navButton Vote-navButton--prev" disabled="${
                 !offset ? "true" : "false"
-              }" data-action="update" data-params='{ \"alias\": \"leaders\", \"data\": { \"offset\": ${prevSlide} }}' ></button>
+              }" data-action="update" data-params='{ \"alias\": \"vote\", \"data\": { \"offset\": ${prevSlide} }}' ></button>
             </div>
             <div class="Vote-area" data-nav="down" style="grid-area: nav-button-down;">
               <button class="Vote-navButton Vote-navButton--next" disabled="${
                 users.length <= nextSlide ? "true" : "false"
-              }" data-action="update" data-params='{ \"alias\": \"leaders\", \"data\": { \"offset\": ${nextSlide} }}'></button>  
+              }" data-action="update" data-params='{ \"alias\": \"vote\", \"data\": { \"offset\": ${nextSlide} }}'></button>  
             </div>
         </div>
       </div>
