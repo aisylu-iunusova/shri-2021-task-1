@@ -17,9 +17,3 @@
 @import "./chart.scss";
 @import "./diagram.scss";
 @import "./activity.scss";
-
-.Plot-root {
-  vertical-align: top;
-  width: 100%;
-  height: 100%;
-}

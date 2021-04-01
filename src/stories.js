@@ -4,7 +4,6 @@ import Diagram from "./diagram";
 import Layout from "./layout";
 import Activity from "./activity";
 import Vote from "./vote";
-import { getParamByName } from "./utils";
 
 class Stories {
   constructor() {

@@ -1,6 +1,5 @@
 class Leaders {
   userMaxLength = 5;
-  userMinLength = 3;
   selectUser = null;
 
   preparedUsers({ users, selectedUserId }, length) {
