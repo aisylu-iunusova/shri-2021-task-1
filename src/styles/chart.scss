@@ -24,11 +24,10 @@
   }
 
   &-bars {
-    display: flex;
+    display: grid;
     gap: calc(24 * var(--base-ratio));
 
     @media (max-width: 567px) {
-      justify-content: flex-start;
       transform: translateX(calc(-12% - 24 * var(--base-ratio)));
     }
   }

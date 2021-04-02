@@ -16,7 +16,9 @@ class Chart {
     return /* html */ `
       <div class="Chart-root">
         <div class="Chart-barsWrap">
-          <div class="Chart-bars">
+          <div class="Chart-bars" style="grid-template-columns: repeat(${
+            values.length
+          }, 1fr)">
             ${values
               .map(({ value, title, active }) => {
                 return /* html */ `
